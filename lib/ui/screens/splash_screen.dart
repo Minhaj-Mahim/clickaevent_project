@@ -1,5 +1,4 @@
 import 'package:clickaevent_project/ui/screens/login_screen.dart';
-import 'package:clickaevent_project/ui/widgets/body_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -29,13 +28,21 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BodyBackground(
-        child: Center(
-          child: SvgPicture.asset(
-            'assets/images/splashScreen.svg',
-            width: 300,
+      body: Stack(
+        children: [
+          SvgPicture.asset(
+            'assets/images/balloonebackground.svg',
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.cover,
           ),
-        ),
+          Center(
+            child: SvgPicture.asset(
+              'assets/images/splashScreen.svg',
+              width: 300,
+            ),
+          ),
+        ],
       ),
     );
   }
