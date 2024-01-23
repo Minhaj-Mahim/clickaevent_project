@@ -17,7 +17,7 @@ class BodyBackground extends StatelessWidget {
           'assets/images/balloonebackground.svg',
           width: 412,
           height: 900,
-          fit: BoxFit.cover,
+          fit: BoxFit.cover
         ),
         child,
       ],
