@@ -1,3 +1,6 @@
+import 'package:clickaevent_project/ui/screens/forgot_password_screen.dart';
+import 'package:clickaevent_project/ui/screens/front_page_screen.dart';
+import 'package:clickaevent_project/ui/screens/sign_up_screen.dart';
 import 'package:clickaevent_project/ui/widgets/body_background.dart';
 import 'package:flutter/material.dart';
 
@@ -34,10 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Text(
                         'Get Started With',
-                        style: Theme
-                            .of(context)
-                            .textTheme
-                            .headlineLarge,
+                        style: Theme.of(context).textTheme.displaySmall,
                       ),
                       const SizedBox(
                         height: 24,
@@ -49,9 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           hintText: 'Email',
                         ),
                         validator: (String? value) {
-                          if (value
-                              ?.trim()
-                              .isEmpty ?? true) {
+                          if (value?.trim().isEmpty ?? true) {
                             return 'Enter valid email';
                           }
                           return null;
@@ -84,8 +82,15 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: CircularProgressIndicator(),
                           ),
                           child: ElevatedButton(
-                            onPressed: () {},
-                            child: const Icon(Icons.arrow_circle_right_outlined),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const FrontPageScreen()));
+                            },
+                            child:
+                                const Icon(Icons.arrow_circle_right_outlined),
                           ),
                         ),
                       ),
@@ -95,12 +100,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       Center(
                         child: TextButton(
                           onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (context) =>
-                            //       const ForgotPasswordScreen(),
-                            //     ));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ForgotPasswordScreen(),
+                                ));
                           },
                           child: const Text(
                             'Forgot Password?',
@@ -124,16 +129,17 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           TextButton(
                             onPressed: () {
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //       builder: (context) => const SignUpScreen(),
-                              //     ));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const SignUpScreen(),
+                                  ));
                             },
                             child: const Text(
                               'Sign up',
                               style: TextStyle(
                                 fontSize: 16,
+                                color: Colors.red,
                               ),
                             ),
                           ),
